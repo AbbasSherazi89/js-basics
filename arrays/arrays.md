@@ -1,8 +1,8 @@
-## Arrays
+# Arrays
 An array is a special variable, which can hold more than one value:
 const cars = ["Saab", "Volvo", "BMW"];
 
-# Note
+## Note
 - const person = ["John", "Doe", 46];
 Arrays use numbers to access its "elements". In this example, person[0] returns John:
 -const person = {firstName:"John", lastName:"Doe", age:46};
@@ -12,10 +12,10 @@ myArray[0] = Date.now;
 myArray[1] = myFunction;
 myArray[2] = myCars;
 
-# Adding Array Elements
+## Adding Array Elements
 The easiest way to add a new element to an array is using the push() method:
 
-## Methods of arrays
+# Methods of arrays
 - toString() converts an array to a string of (comma separated) array values.
 - The join() method also joins all array elements into a string.
 - The pop() method removes the last element from an array:
@@ -29,7 +29,7 @@ The push() method returns the new array length:
 - The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
 - The unshift() method returns the new array length:
 
-## Warning !
+# Warning !
 Array elements can be deleted using the JavaScript operator delete.
 Using delete leaves undefined holes in the array.
 Use pop() or shift() instead.
@@ -65,7 +65,7 @@ function myArrayMax(arr) {
   return Math.max.apply(null, arr);
 }
 
-# Sorting Object Arrays
+## Sorting Object Arrays
 JavaScript arrays often contain objects:
 const cars = [
   {type:"Volvo", year:2016},
@@ -74,7 +74,7 @@ const cars = [
 ];
 Even if objects have properties of different data types, the sort() method can be used to sort the array.
 
-# JavaScript Array Iteration
+## JavaScript Array Iteration
 Array iteration methods operate on every array item.
 
 - The forEach() method calls a function (a callback function) once for each array element.
@@ -112,7 +112,7 @@ This example finds (returns the value of) the first element that is larger than 
 - The Array.keys() method returns an Array Iterator object with the keys of an array.
 - Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
  
-# JavaScript Array Spread (...)
+## JavaScript Array Spread (...)
 -The ... operator expands an iterable (like an array) into more elements.
 const q1 = ["Jan", "Feb", "Mar"];
 const q2 = ["Apr", "May", "Jun"];
