@@ -95,10 +95,13 @@ numbers.map((val) => {
 
 console.log("Iterating an arrays using map method: ", txt1);
 
-let flt=numbers.filter((val, index)=>{
-    return val>30
+let flt = numbers.filter((val, index) => {
+  return val > 30;
 });
-console.log("Values greater then 30 should be printed using the filter methods: ",flt);
+console.log(
+  "Values greater then 30 should be printed using the filter methods: ",
+  flt
+);
 
 const num = [45, 4, 9, 16, 25];
 let sum = num.reduce(myFunction);
@@ -110,10 +113,60 @@ console.log("Sum of the array is: ", sum);
 
 const fruits3 = ["Apple", "Orange", "Apple", "Mango"];
 let position = fruits3.indexOf("Apple") + 1;
-console.log("The position of the apple using the indexof method is: ",position)
+console.log(
+  "The position of the apple using the indexof method is: ",
+  position
+);
 
-let fnd=num.find((val, index)=>{
-    return val<8
+let fnd = num.find((val, index) => {
+  return val < 8;
 });
-console.log("The first value that is less then 8 is using the find function:", fnd);
+console.log(
+  "The first value that is less then 8 is using the find function:",
+  fnd
+);
+
+
+let vax="Abbas";
+let vay=vax;
+vay='Ali';
+console.warn(vax); // output will be Abbas
+
+// Deep and Shallow copy
+
+// let x = { name: "Abbas" };
+// let y = x;
+// y.name = "Ali";
+// console.log("Value of X: ", x); // output will be Ali
+
+// to solve the above problem we use shallow copy concept
+let x ={name:"Abbas"};
+// let y=Object.assign({},x); //Method 1 of shallow copy
+let y={...x}; //Method 2 of shallow copy
+y.name="Ali";
+console.log("Shallow copy: ", x); // Abbas
+
+// Deep Copy 
+let person={name:"Abbas",
+address:{
+  city:'Jand',
+  street:'23'
+}
+};
+
+let person2=JSON.parse(JSON.stringify(person));
+person2.address.city='Islamabad';
+console.log(person);
+
+
+// Destrucuring
+let arr=[34,5,22,66,23,78,2]
+let [a,b,c, ...rest]=arr;
+console.log(a,b,c,rest);
+
+
+var array1 = [10, 20, 30, 40, 50];
+var array2 = [60, 70, 80, 90, 100];
+var array3 = [...array1, ...array2];
+console.log("Values in array3: ", array3);
 

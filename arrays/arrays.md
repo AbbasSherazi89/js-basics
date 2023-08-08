@@ -113,14 +113,54 @@ This example finds (returns the value of) the first element that is larger than 
 - Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
  
 ## JavaScript Array Spread (...)
--The ... operator expands an iterable (like an array) into more elements.
-const q1 = ["Jan", "Feb", "Mar"];
-const q2 = ["Apr", "May", "Jun"];
-const q3 = ["Jul", "Aug", "Sep"];
-const q4 = ["Oct", "Nov", "May"];
 
-const year = [...q1, ...q2, ...q3, ...q4];
+- Spread syntax looks exactly like rest syntax. In a way, spread syntax is the opposite of rest syntax. Spread syntax "expands" an array into its elements, while rest syntax collects multiple elements and "condenses" them into a single element.
+
+- The rest parameter is converse to the spread operator. while the spread operator expands elements of an iterable, the rest operator compresses them. It collects several elements.
+- `Spread operator example`
+let arr1 = [1,2,3,4]
+let arr2 = [5,6,7,8]
+let concat = [...arr1, ...arr2]
+// concat is [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+- `Rest operator example `
+let arr=[34,5,22,66,23,78,2]
+let [a,b,c, ...rest]=arr;
+console.log(a,b,c,d,rest);// output will be 34 5 22 [66, 23, 78, 2]
 
 
+
+
+# Deep and Shallow copy
+
+When we assign a variable to another variable then the first var value copied to the another one but when we assign the one object to another one then the first object memory location copied to the second object.
+For example:
+let x={name: 'Abbas'};
+let y=x;
+y.name="Ali"
+console.lgo(x) // out put would be Ali not Abbas because we changed the name in the second object.
+
+## Shallow copy
+By assigning an object to another object the memory allocation will be copied to another one, when we make some changes in second object it will be applied on the first object also. To solve this problem we use the concept of shallow copy, in which we copy the value of the object to the second object.
+let x ={name:"Abbas"};
+// let y=Object.assign({},x); //Method 1 of shallow copy
+let y={...x}; //Method 2 of shallow copy
+y.name="Ali";
+console.log("Shallow copy: ", x); // Abbas
+
+## Deep copy
+- When we have to copy the nested objects values to others objects then here the nested object concept is used.
+let person={name:"Abbas",
+address:{
+  city:'Jand',
+  street:'23'
+}
+};
+let person2=JSON.parse(JSON.stringify(person));
+person2.address.city='Islamabad';
+console.log(person);
+
+- if a function is included in the object then we use a loadash library to resolve the problem because if we make a deep copy of the object then the function part will not be displayed.
+- Lodash To Deep Copy: Lodash is a JavaScript library that provides multiple utility functions and one of the most commonly used functions of the Lodash library is the cloneDeep() method. 
 
 
