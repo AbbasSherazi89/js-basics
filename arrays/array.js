@@ -156,7 +156,7 @@ address:{
 
 let person2=JSON.parse(JSON.stringify(person));
 person2.address.city='Islamabad';
-console.log(person);
+console.log("Deep copy: ",person);
 
 
 // Destrucuring
@@ -170,3 +170,7 @@ var array2 = [60, 70, 80, 90, 100];
 var array3 = [...array1, ...array2];
 console.log("Values in array3: ", array3);
 
+
+// let val1='Abbas good is a good boy';
+// let val2=val1.replace('good', 'bad');
+// console.log("Using the replace all method: ",val2);

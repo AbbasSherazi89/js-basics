@@ -121,13 +121,12 @@ This example finds (returns the value of) the first element that is larger than 
 let arr1 = [1,2,3,4]
 let arr2 = [5,6,7,8]
 let concat = [...arr1, ...arr2]
-// concat is [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+// concat is [ 1, 2, 3, 4, 5, 6, 7, 8 ]  
 
 - `Rest operator example `
 let arr=[34,5,22,66,23,78,2]
 let [a,b,c, ...rest]=arr;
 console.log(a,b,c,d,rest);// output will be 34 5 22 [66, 23, 78, 2]
-
 
 
 
